@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+							
+                        <h1>Filtres </h1>
+						
+						
+                  <form class="form-input" action="launchesbySearch()" method="POST">
+                 <label>Par Landpad</label>
+                 <select class="form-control" name="select_landpad">
+				 <option value="choix1"> ----- Choisir ---- </option>
+                  {% for landpad in datalandpad %}
+                  <option value="{{ landpad.name }}" >{{ landpad.name }}</option>
+				 {% endfor %}
+                 </select>
+
+				 <hr>
+
+				  <label>Par Launchpad</label>
+                 <select class="form-control" name="select_launchpad">
+				 <option value="choix2"> ----- Choisir ---- </option>
+                  {% for launchpad in datalaunchpad %}
+                 <option value=" {{launchpad.name}}">{{ launchpad.name }}</option>
+				 {% endfor %}
+                 </select>
+				 <hr>
+
+				 <input type="submit" name="submit" class="btn btn-success" value="Filtrer">
+
+				 </form>
+
+				 <i
+
+			
+							</div>
+						</div>
+					</div>
+                   
+					<!-- start widget -->
+					
+					<!-- end widget -->
+					<!-- chart start -->
+					
+					
+					<!-- start new student list -->
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<div class="card  card-box">
+								<div class="card-head">
+									<header>Tous les lancements</header>
+									<div class="tools">
+										<a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+										<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+										<a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+									</div>
+								</div>
+								<div class="card-body ">
+									<div class="table-wrap">
+									
+										<div class="table-responsive">
+											<table class="table display product-overview mb-30">
+												<thead>
+													<tr>
+														<th>Nom</th>
+														<th>Details</th>
+														<th>Numéro de vol</th>
+														<th>Date de lancement utc</th>
+                                                        <th>Date de lancement local</th>
+                                                        <th>Nom du Launchpad</th>
+                                                        <th>Nom du Landpad</th>
+														
+													</tr>
+												</thead>
+												{% for launche in data %}
+
+                                                   {% for launchpad in datalaunchpad %}
+
+                                                      {% for landpad in datalandpad %}
+													    
+														
+                                                    
+												<tbody>
+													<tr>
+														<td>{{ launche.name}}</td>
+														<td>{{ launche.details}}</td>
+														<td>{{ launche.flight_number}}</td>
+														<td>
+															<span class="label label-sm label-success">{{ launche.date_utc}}</span>
+														</td>
+                                                        <td>
+															<span class="label label-sm label-success">{{ launche.date_local}}</span>
+														</td>
+                                                        <td>{{ launchpad.name}}</td>
+                                                         <td>{{landpad.name}}</td>	
+														
+													</tr>
+													
+												</tbody>
+
+                                                        {% endfor %}
+                                                    {% endfor %}
+												{% endfor %}
+                                                <hr>
+                                              
+											</table>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end new student list -->
+				</div>
+			</div>
+			<!-- end page content -->
+			<!-- start chat sidebar -->
+			
+{% endblock %}

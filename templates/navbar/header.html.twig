@@ -1,0 +1,48 @@
+{% block content %}
+
+<div class="page-header navbar navbar-fixed-top">
+			<div class="page-header-inner ">
+				<!-- logo start -->
+				<div class="page-logo">
+					<a href="{{path('app_home')}}">
+						
+						<span class="logo-default">SpaceXProject</span> </a>
+				</div>
+				<!-- logo end -->
+				<ul class="nav navbar-nav navbar-left in">
+					<li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+				</ul>
+			
+				<!-- start mobile menu -->
+				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span></span>
+				</a>
+				<!-- end mobile menu -->
+				<!-- start header menu -->
+				<div class="top-menu">
+					<ul class="nav navbar-nav pull-right">
+						
+						
+						<li class="dropdown dropdown-user">
+							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+								data-close-others="true">
+								<img alt="" class="img-circle " src="../assets/img/MaPhoto.JPG" />
+								<span class="username username-hide-on-mobile"> Jean-Baptiste </span>
+								<i class="fa fa-angle-down"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-default">
+								<li>
+									<a href="#">
+										<i class="icon-logout"></i>Déconnexion </a>
+								</li>
+							</ul>
+						</li>
+						<!-- end manage user dropdown -->
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+{% endblock %}

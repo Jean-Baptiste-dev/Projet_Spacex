@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+							<div class=" pull-left">
+								<div class="page-title">Dashboard</div>
+							</div>
+							<ol class="breadcrumb page-breadcrumb pull-right">
+								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+										href="index-2.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+								<li class="active">Dashboard</li>
+							</ol>
+						</div>
+					</div>
+					
+					<!-- chart start -->
+					
+					
+					<!-- start new student list -->
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<div class="card  card-box">
+								<div class="card-head">
+									<header>La liste des landpads</header>
+									<div class="tools">
+										<a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+										<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+										<a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+									</div>
+								</div>
+								<div class="card-body ">
+									<div class="table-wrap">
+									
+										<div class="table-responsive">
+											<table class="table display product-overview mb-30">
+												<thead>
+													<tr>
+														<th>Nom du Landpad</th>
+														<th>Type</th>
+														<th>La localisation</th>
+														<th>La latitude</th>
+														<th>La longitude</th>
+                                                        <th>Région</th>
+                                                        <th>Status</th>
+
+														
+													</tr>
+												</thead>
+												{% for landpad in datalandpad %}
+												<tbody>
+													<tr>
+														<td>{{ landpad.name}}</td>
+														<td>{{ landpad.type}}</td>
+														<td>{{ landpad.locality}}</td>
+														<td>{{ landpad.latitude}}</td>
+                                                        <td>{{ landpad.longitude}}</td>
+                                                        <td>{{ landpad.region}}</td>
+														<td>
+															<span class="label label-sm label-success">{{ landpad.status}}</span>
+														</td>
+
+														
+														
+														
+													</tr>
+													
+												</tbody>
+												{% endfor %}
+											</table>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end new student list -->
+				</div>
+			</div>
+			<!-- end page content -->
+			<!-- start chat sidebar -->
+			
+{% endblock %}

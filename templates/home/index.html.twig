@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+							<div class=" pull-left">
+								<div class="page-title">Dashboard</div>
+							</div>
+							<ol class="breadcrumb page-breadcrumb pull-right">
+								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+										href="index-2.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+								<li class="active">Dashboard</li>
+							</ol>
+						</div>
+					</div>
+					<!-- start widget -->
+					<div class="row">
+						<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+						<a href="{{ path('app_lancement')}}">
+							<div class="analysis-box m-b-0 bg-purple">
+								<h3 class="text-white box-title">les lancements rockets</h3>
+							</div>
+						</a>
+						</div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+						<a href="{{ path('app_launchpad')}}">
+							<div class="analysis-box m-b-0 bg-blue">
+								<h3 class="text-white box-title">La liste des  Launchpads</h3>
+							</div>
+							</a>
+						</div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+						<a href="{{ path('app_landpad')}}" >
+							<div class="analysis-box m-b-0 bg-success">
+								<h3 class="text-white box-title">La liste des Landpad</h3>
+							</div>
+						</a>
+						</div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+						<a href="{{ path('app_carte_launchpad')}}">
+							<div class="analysis-box m-b-0 bg-purple">
+								<h3 class="text-white box-title">Carte</h3>
+							</div>
+						</a>
+						</div>
+                        <!--
+						<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+							<div class="analysis-box m-b-0 bg-danger">
+								<h3 class="text-white box-title">Nombre de lancement annuel <span class="pull-right"><i
+											class="fa fa-caret-up"></i> Le nombre ...</span></h3>
+						     
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+							<a href="#"><div class="analysis-box m-b-0 bg-blue">
+								<h3 class="text-white box-title">La position sur une carte</a></h3>
+							
+							</div>
+						</a>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+							<div class="analysis-box m-b-0 bg-success">
+								<h3 class="text-white box-title">Autres ... <span class="pull-right"><i
+											class="fa fa-caret-up"></i> Test </span></h3>
+								<div id="sparkline16" class="text-center"><canvas
+										style="display: inline-block; width: 215px; height: 70px; vertical-align: top;"></canvas>
+								</div>
+							</div>
+						</div>
+                        -->
+					</div>
+					<!-- end widget -->
+					<!-- chart start -->
+					
+					
+					<!-- start new student list -->
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<div class="card  card-box">
+								<div class="card-head">
+									<header>La liste des fusées (rockets) </header>
+									<div class="tools">
+										<a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+										<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+										<a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+									</div>
+								</div>
+								<div class="card-body ">
+									<div class="table-wrap">
+									
+										<div class="table-responsive">
+											<table class="table display product-overview mb-30">
+												<thead>
+													<tr>
+														<th>Nom</th>
+														<th>Type</th>
+														<th>Pays</th>
+														<th>Compagnie</th>
+														<th>Date de Premier lancement</th>
+														
+													</tr>
+												</thead>
+												{% for rocket in datarockets %}
+												<tbody>
+													<tr>
+														<td>{{ rocket.name}}</td>
+														<td>{{ rocket.type}}</td>
+														<td>{{ rocket.country}}</td>
+														<td>{{ rocket.company}}</td>
+														<td>
+															<span class="label label-sm label-success">{{ rocket.first_flight}}</span>
+														</td>
+
+														
+														
+														
+													</tr>
+													
+												</tbody>
+												{% endfor %}
+											</table>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end new student list -->
+				</div>
+			</div>
+			<!-- end page content -->
+			<!-- start chat sidebar -->
+			
+{% endblock %}

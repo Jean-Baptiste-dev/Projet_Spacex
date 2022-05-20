@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}carte{% endblock %}
+
+{% block content %}
+<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+							<div class=" pull-left">
+								<div class="page-title">Google Maps</div>
+							</div>
+							<ol class="breadcrumb page-breadcrumb pull-right">
+								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+										href="index-2.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+								<li><a class="parent-item" href="#">Maps</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+								<li class="active"> Carte Google Maps </li>
+							</ol>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card card-topline-green">
+								<div class="card-head">
+									<header>Carte </header>
+									<div class="tools">
+										<a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+										<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+										<a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+									</div>
+								</div>
+								<div class="card-body ">
+                                {% for landpad in datalandpad %}
+									<div id="gmap_marker" class="gmaps">
+                                    <iframe src="https://www.google.com/maps/embed?&q={{ landpad.latitude }} {{ landpad.longitude }}"
+                                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								</div>
+                                {% endfor %}
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+			<!-- end page content -->
+{% endblock %}
